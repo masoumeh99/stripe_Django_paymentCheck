@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)mp4)o3te4u4=wz)_lt^d*1ug3rx#ifmkm73kv=d8@6wx(s1go'
+SECRET_KEY = 'your secret key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'stripePayment.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'myDb',
+        'NAME': 'your db name',
         'USER': 'postgres',
-        'PASSWORD': '2050954530',
+        'PASSWORD': 'your db pass',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -126,6 +126,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STRIPE_PUBLISHABLE_KEY = "pk_test_51KnKnvIT7LCaJDZ84dQYF22PA0A8qoW4HtA3bD3sYhFJ4VWEfoKynmqQKiWmqedssd89DWoTz87wB1QRkzch6t5m00Rx52lQWW"
-STRIPE_SECRET_KEY = "sk_test_51KnKnvIT7LCaJDZ8HnbsnvILmKd425a4PWqQCzNOBtUyX7NVTvV0JrXxIL77AiT7ZhkUMYSXzn81EGLSLzDvBffv005u325L6c"
-STRIPE_WEBHOOK_SECRET = " whsec_b9b82f73cf06b17bf0ac244c621ce858988731507881addaac0d0a3ad26848bb"
+STRIPE_PUBLISHABLE_KEY = "your stripe public key"
+STRIPE_SECRET_KEY = "your stripe secret key"
+STRIPE_WEBHOOK_SECRET = "your webhook secret key"
