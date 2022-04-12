@@ -37,7 +37,7 @@ class ProductLandingPageView(TemplateView):
 class CreateCheckoutSessionView(View):
     def post(self, request, *args, **kwargs):
         price = Price.objects.get(id=self.kwargs["pk"])
-        YOUR_DOMAIN = "http://127.0.0.1:8000"  # change in production
+        YOUR_DOMAIN = "your localhost"  # change in production
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=[
@@ -54,7 +54,7 @@ class CreateCheckoutSessionView(View):
 
 
 # You can find your endpoint's secret in your webhook settings
-endpoint_secret = 'whsec_b9b82f73cf06b17bf0ac244c621ce858988731507881addaac0d0a3ad26848bb'
+endpoint_secret = 'whsec...'
 
 
 @csrf_exempt
