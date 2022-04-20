@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 import stripe
 from django.conf import settings
 from django.views import View
-from .models import Price, Payment
+from .models import Price, Costumer
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
@@ -46,7 +46,7 @@ class CreateCheckoutSessionView(View):
                     'quantity': 1,
                 },
             ],
-            mode='payment',
+            mode='subscription',
             success_url=YOUR_DOMAIN + '/success/',
             cancel_url=YOUR_DOMAIN + '/cancel/',
         )
@@ -81,10 +81,10 @@ def stripe_webhook(request):
 
         print(session)
         email = session["customer_details"]["email"]
-        id = session["id"]
+        id = session["subscription"]
         # saving to Database
-        payment_instance = Payment.objects.create(
-            customer_email=email, payment_id=id)
+        costumer_instance = Costumer.objects.create(
+            customer_email=email, subscription_id=id)
 
     # Passed signature verification
     return HttpResponse(status=200)
