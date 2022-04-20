@@ -18,6 +18,6 @@ class Price(models.Model):
         return "{0:.2f}".format(self.price / 100)
 
 
-class Payment(models.Model):
+class Costumer(models.Model):
     customer_email = models.CharField(max_length=100)
-    payment_id = models.CharField(max_length=300)
+    subscription_id = models.CharField(max_length=300)
